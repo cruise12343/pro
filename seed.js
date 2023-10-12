@@ -123,6 +123,7 @@ function generateFloats({ serverSeed, clientSeed, nonce, cursor, count }) {
     bytesChunk.reduce((result, value, i) => {
       const divider = 256 ** (i + 1);
       const partialResult = value / divider;
+      console.log(`\n----------\nindex:${i}\nvalue:${value}\ndivider:${divider}\npartialResult:${partialResult}\nresult:${result}\n----------`);
       return result + partialResult;
     }, 0)
   );
